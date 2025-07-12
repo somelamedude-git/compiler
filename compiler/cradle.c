@@ -24,9 +24,16 @@ char getName() {
     return value;
 }
 
-int main() {
-    getChar();               
-    char name = getName();   
-   
-    return 0;
+int getNum(){
+    int value;
+    if(isdigit(Look)){
+        value = Look-'0';
+    }
+    else{
+        error("Expected a number");
+    }
+    getChar();
+    return value;
 }
+
+
