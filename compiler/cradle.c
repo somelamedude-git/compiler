@@ -5,7 +5,7 @@
 const char TAB = '\t';
 char Look;
 
-void getChar() {
+void GetChar() {
     scanf(" %c", &Look); 
 }
 
@@ -20,7 +20,7 @@ char getName() {
     } else {
         error("Expected a letter");
     }
-    getChar();  
+    GetChar();  
     return value;
 }
 
@@ -32,8 +32,15 @@ int getNum(){
     else{
         error("Expected a number");
     }
-    getChar();
+    GetChar();
     return value;
 }
 
+void init(){
+    GetChar();
+}
+
+void MainProgram(){
+    init();
+}
 
