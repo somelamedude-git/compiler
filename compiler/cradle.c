@@ -1,24 +1,32 @@
 #include <stdio.h>
 #include <stdbool.h>
-#include <ctype.h> //Ill use this directly for isdigit
+#include <ctype.h>
 
-int main(){
-    const char TAB = '\t';
-    char Look;
+const char TAB = '\t';
+char Look;
 
-    void getChar(){
-        scanf(" %c", &Look); //SKips white space, we need that for tokens
+void getChar() {
+    scanf(" %c", &Look); 
+}
+
+void error(const char *message) {
+    printf("Error: %s\n", message);
+}
+
+char getName() {
+    char value = '\0';
+    if (isalpha(Look)) {
+        value = toupper(Look);  
+    } else {
+        error("Expected a letter");
     }
+    getChar();  
+    return value;
+}
 
-    char getName(){
-        char value='\0';
-        if(isalpha(Look)){
-            value = toupper(Look);
-        }
-        else{
-            //I will b writing an error function for this
-        }
-        getChar();
-        return value;
-    }
+int main() {
+    getChar();               
+    char name = getName();   
+   
+    return 0;
 }
