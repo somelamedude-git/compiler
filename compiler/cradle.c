@@ -44,3 +44,9 @@ void MainProgram(){
     init();
 }
 
+void match(char x){
+    if(Look == x) GetChar();
+    else{
+        error("Expected " + x);
+    }
+}
