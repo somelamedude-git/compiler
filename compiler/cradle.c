@@ -50,3 +50,7 @@ void match(char x){
         error("Expected " + x);
     }
 }
+
+void Emit(char *s){
+    printf("%c%s\n", TAB, s);
+}
